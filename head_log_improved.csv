@@ -1,0 +1,173 @@
+timestamp,source,label,count,bboxes
+2025-09-10T22:32:52.213188,0,No person detected,0,[]
+2025-09-10T22:32:52.748624,0,Single person detected,1,"[(381, 302, 158, 178)]"
+2025-09-10T22:32:52.917267,0,No person detected,0,[]
+2025-09-10T22:32:53.576599,0,Single person detected,1,"[(388, 309, 148, 171)]"
+2025-09-10T22:32:53.718730,0,No person detected,0,[]
+2025-09-10T22:32:53.887441,0,Single person detected,1,"[(145, 6, 410, 474)]"
+2025-09-10T22:32:54.693501,0,No person detected,0,[]
+2025-09-10T22:32:55.132476,0,Single person detected,1,"[(24, 253, 84, 126)]"
+2025-09-10T22:32:55.590609,0,No person detected,0,[]
+2025-09-10T22:32:57.460918,0,Single person detected,1,"[(165, 0, 450, 480)]"
+2025-09-10T22:33:00.941083,0,No person detected,0,[]
+2025-09-10T22:33:01.110142,0,Single person detected,1,"[(183, 41, 418, 439)]"
+2025-09-10T22:33:01.275565,0,No person detected,0,[]
+2025-09-10T22:33:01.596277,0,Single person detected,1,"[(176, 45, 410, 435)]"
+2025-09-10T22:33:02.313456,0,2 people detected,2,"[(157, 23, 438, 457), (26, 255, 80, 120)]"
+2025-09-10T22:33:02.501152,0,Single person detected,1,"[(178, 59, 384, 421)]"
+2025-09-10T22:33:02.683803,0,No person detected,0,[]
+2025-09-10T22:33:02.878533,0,Single person detected,1,"[(184, 67, 368, 413)]"
+2025-09-10T22:33:03.074103,0,No person detected,0,[]
+2025-09-10T22:33:03.875695,0,Single person detected,1,"[(177, 62, 382, 418)]"
+2025-09-10T22:33:04.060417,0,No person detected,0,[]
+2025-09-10T22:33:05.156255,0,Single person detected,1,"[(401, 150, 81, 161)]"
+2025-09-10T22:33:05.349622,0,No person detected,0,[]
+2025-09-10T22:33:05.536186,0,Single person detected,1,"[(403, 159, 74, 147)]"
+2025-09-10T22:33:05.712053,0,No person detected,0,[]
+2025-09-10T22:33:07.367924,0,Single person detected,1,"[(422, 162, 67, 135)]"
+2025-09-10T22:33:07.608322,0,No person detected,0,[]
+2025-09-10T22:33:08.444907,0,Single person detected,1,"[(412, 161, 69, 138)]"
+2025-09-10T22:33:08.666108,0,No person detected,0,[]
+2025-09-10T22:33:11.306960,0,Single person detected,1,"[(0, 0, 140, 352)]"
+2025-09-10T22:33:11.497523,0,No person detected,0,[]
+2025-09-10T22:33:15.197144,0,Single person detected,1,"[(413, 163, 68, 136)]"
+2025-09-10T22:33:15.439581,0,No person detected,0,[]
+2025-09-10T22:33:16.407113,0,Single person detected,1,"[(0, 0, 144, 360)]"
+2025-09-10T22:33:16.608509,0,No person detected,0,[]
+2025-09-10T22:33:16.983041,0,Single person detected,1,"[(411, 168, 67, 134)]"
+2025-09-10T22:33:17.263304,0,No person detected,0,[]
+2025-09-10T22:33:17.528859,0,Single person detected,1,"[(411, 174, 70, 140)]"
+2025-09-10T22:33:17.663723,0,No person detected,0,[]
+2025-09-10T22:33:18.088193,0,Single person detected,1,"[(411, 171, 69, 138)]"
+2025-09-10T22:33:18.381038,0,No person detected,0,[]
+2025-09-10T22:33:20.419498,0,Single person detected,1,"[(385, 166, 76, 151)]"
+2025-09-10T22:33:20.828600,0,No person detected,0,[]
+2025-09-10T22:33:21.205395,0,Single person detected,1,"[(377, 163, 82, 164)]"
+2025-09-10T22:33:21.406998,0,No person detected,0,[]
+2025-09-10T22:33:22.441209,0,Single person detected,1,"[(388, 163, 82, 164)]"
+2025-09-10T22:33:22.656968,0,No person detected,0,[]
+2025-09-10T22:33:23.643176,0,Single person detected,1,"[(375, 161, 86, 172)]"
+2025-09-10T22:33:23.827778,0,No person detected,0,[]
+2025-09-10T22:33:24.475465,0,Single person detected,1,"[(390, 164, 79, 158)]"
+2025-09-10T22:33:24.675125,0,No person detected,0,[]
+2025-09-10T22:33:26.820361,0,Single person detected,1,"[(390, 162, 71, 142)]"
+2025-09-10T22:33:26.991870,0,No person detected,0,[]
+2025-09-10T22:33:28.640848,0,Single person detected,1,"[(389, 153, 77, 154)]"
+2025-09-10T22:33:29.168596,0,No person detected,0,[]
+2025-09-10T22:33:32.942183,0,Single person detected,1,"[(391, 169, 72, 144)]"
+2025-09-10T22:33:33.133252,0,No person detected,0,[]
+2025-09-10T22:33:35.711180,0,Single person detected,1,"[(391, 176, 71, 141)]"
+2025-09-10T22:33:35.928506,0,No person detected,0,[]
+2025-09-10T22:33:36.109743,0,Single person detected,1,"[(393, 170, 71, 141)]"
+2025-09-10T22:33:36.299831,0,No person detected,0,[]
+2025-09-10T22:33:36.515304,0,Single person detected,1,"[(393, 170, 69, 139)]"
+2025-09-10T22:33:36.697671,0,No person detected,0,[]
+2025-09-10T22:33:38.057806,0,Single person detected,1,"[(389, 172, 70, 140)]"
+2025-09-10T22:33:38.255175,0,No person detected,0,[]
+2025-09-10T22:33:39.772002,0,Single person detected,1,"[(388, 177, 72, 143)]"
+2025-09-10T22:33:40.109302,0,No person detected,0,[]
+2025-09-10T22:33:43.084806,0,Single person detected,1,"[(379, 163, 81, 161)]"
+2025-09-10T22:33:43.283702,0,No person detected,0,[]
+2025-09-10T22:33:43.443136,0,Single person detected,1,"[(383, 165, 76, 151)]"
+2025-09-10T22:33:43.606648,0,No person detected,0,[]
+2025-09-10T22:33:44.335948,0,Single person detected,1,"[(22, 250, 88, 132)]"
+2025-09-10T22:33:44.524072,0,No person detected,0,[]
+2025-09-10T22:33:44.716653,0,Single person detected,1,"[(374, 160, 86, 172)]"
+2025-09-10T22:33:44.886768,0,No person detected,0,[]
+2025-09-10T22:33:47.947323,0,Single person detected,1,"[(400, 311, 192, 169)]"
+2025-09-10T22:33:48.148962,0,No person detected,0,[]
+2025-09-10T22:33:48.446032,0,Single person detected,1,"[(406, 303, 202, 177)]"
+2025-09-10T22:33:49.312516,0,No person detected,0,[]
+2025-09-10T22:33:50.695721,0,Single person detected,1,"[(137, 23, 396, 457)]"
+2025-09-10T22:33:51.736461,0,No person detected,0,[]
+2025-09-10T22:33:52.066196,0,Single person detected,1,"[(552, 402, 86, 78)]"
+2025-09-10T22:33:52.200520,0,No person detected,0,[]
+2025-09-10T22:33:53.192458,0,Single person detected,1,"[(172, 26, 412, 454)]"
+2025-09-10T22:33:53.336624,0,No person detected,0,[]
+2025-09-10T22:33:53.513660,0,Single person detected,1,"[(148, 37, 360, 443)]"
+2025-09-10T22:33:53.851859,0,2 people detected,2,"[(131, 0, 414, 480), (410, 95, 116, 174)]"
+2025-09-10T22:33:54.358959,0,Single person detected,1,"[(401, 119, 78, 156)]"
+2025-09-10T22:33:55.813616,0,No person detected,0,[]
+2025-09-10T22:33:56.151517,0,Single person detected,1,"[(143, 28, 398, 452)]"
+2025-09-10T22:33:56.853035,0,No person detected,0,[]
+2025-09-10T22:33:57.608008,0,Single person detected,1,"[(396, 129, 86, 172)]"
+2025-09-10T22:34:00.348177,0,No person detected,0,[]
+2025-09-10T22:34:00.499944,0,Single person detected,1,"[(171, 49, 368, 431)]"
+2025-09-10T22:34:01.199880,0,No person detected,0,[]
+2025-09-10T22:34:01.492821,0,Single person detected,1,"[(415, 148, 69, 137)]"
+2025-09-10T22:34:02.560600,0,No person detected,0,[]
+2025-09-10T22:34:02.728461,0,Single person detected,1,"[(416, 151, 68, 134)]"
+2025-09-10T22:34:02.890903,0,No person detected,0,[]
+2025-09-10T22:34:03.041206,0,Single person detected,1,"[(420, 151, 67, 134)]"
+2025-09-10T22:34:03.201867,0,No person detected,0,[]
+2025-09-10T22:34:03.952381,0,Single person detected,1,"[(165, 0, 398, 480)]"
+2025-09-10T22:34:10.305503,0,No person detected,0,[]
+2025-09-10T22:34:12.567235,0,Single person detected,1,"[(532, 118, 86, 172)]"
+2025-09-10T22:34:12.688677,0,No person detected,0,[]
+2025-09-10T22:34:17.417307,0,Single person detected,1,"[(162, 5, 408, 475)]"
+2025-09-10T22:34:17.680791,0,No person detected,0,[]
+2025-09-10T22:34:19.606337,0,Single person detected,1,"[(167, 22, 408, 458)]"
+2025-09-10T22:34:21.776410,0,No person detected,0,[]
+2025-09-10T22:34:21.917389,0,Single person detected,1,"[(184, 40, 384, 440)]"
+2025-09-10T22:34:22.196734,0,No person detected,0,[]
+2025-09-10T22:34:22.335500,0,Single person detected,1,"[(183, 43, 382, 437)]"
+2025-09-10T22:34:25.572733,0,Single person detected,1,"[(126, 27, 426, 453)]"
+2025-09-10T22:34:26.580214,0,No person detected,0,[]
+2025-09-10T22:34:26.738137,0,Single person detected,1,"[(123, 301, 150, 179)]"
+2025-09-10T22:34:27.025750,0,No person detected,0,[]
+2025-09-10T22:34:27.169351,0,Single person detected,1,"[(123, 301, 154, 179)]"
+2025-09-10T22:34:27.314751,0,No person detected,0,[]
+2025-09-10T22:34:28.479026,0,Single person detected,1,"[(247, 178, 74, 148)]"
+2025-09-10T22:34:28.791423,0,No person detected,0,[]
+2025-09-10T22:34:28.944247,0,Single person detected,1,"[(248, 175, 80, 159)]"
+2025-09-10T22:34:29.487252,0,No person detected,0,[]
+2025-09-10T22:34:29.634771,0,Single person detected,1,"[(248, 179, 77, 154)]"
+2025-09-10T22:34:29.900090,0,No person detected,0,[]
+2025-09-10T22:34:30.140174,0,Single person detected,1,"[(250, 181, 76, 151)]"
+2025-09-10T22:34:30.415841,0,No person detected,0,[]
+2025-09-10T22:34:30.549494,0,Single person detected,1,"[(245, 174, 82, 164)]"
+2025-09-10T22:34:30.702727,0,No person detected,0,[]
+2025-09-10T22:34:30.848842,0,Single person detected,1,"[(248, 177, 77, 154)]"
+2025-09-10T22:34:31.140692,0,No person detected,0,[]
+2025-09-10T22:34:31.623907,0,Single person detected,1,"[(248, 178, 74, 146)]"
+2025-09-10T22:34:31.887925,0,No person detected,0,[]
+2025-09-10T22:34:32.150956,0,Single person detected,1,"[(249, 180, 76, 151)]"
+2025-09-10T22:34:32.283556,0,No person detected,0,[]
+2025-09-10T22:34:32.540283,0,Single person detected,1,"[(252, 180, 77, 154)]"
+2025-09-10T22:34:32.788208,0,No person detected,0,[]
+2025-09-10T22:34:35.390882,0,Single person detected,1,"[(413, 56, 76, 151)]"
+2025-09-10T22:34:35.532312,0,No person detected,0,[]
+2025-09-10T22:34:38.271075,0,Single person detected,1,"[(100, 15, 444, 465)]"
+2025-09-10T22:34:38.803080,0,2 people detected,2,"[(140, 14, 422, 466), (152, 188, 116, 174)]"
+2025-09-10T22:34:38.956927,0,Single person detected,1,"[(139, 11, 428, 469)]"
+2025-09-10T22:34:40.524462,0,2 people detected,2,"[(118, 28, 434, 452), (154, 190, 112, 168)]"
+2025-09-10T22:34:40.684700,0,Single person detected,1,"[(121, 16, 436, 464)]"
+2025-09-10T22:34:47.080869,0,No person detected,0,[]
+2025-09-10T22:34:49.016946,0,2 people detected,2,"[(122, 32, 424, 448), (119, 306, 160, 174)]"
+2025-09-10T22:34:49.157436,0,Single person detected,1,"[(121, 17, 434, 463)]"
+2025-09-10T22:34:51.415089,0,No person detected,0,[]
+2025-09-10T22:34:51.715530,0,Single person detected,1,"[(248, 136, 99, 199)]"
+2025-09-10T22:34:51.866889,0,No person detected,0,[]
+2025-09-10T22:34:52.246201,0,Single person detected,1,"[(232, 114, 108, 217)]"
+2025-09-10T22:34:52.401083,0,No person detected,0,[]
+2025-09-10T22:34:52.700291,0,Single person detected,1,"[(371, 298, 67, 134)]"
+2025-09-10T22:34:52.869958,0,No person detected,0,[]
+2025-09-10T22:34:53.551624,0,Single person detected,1,"[(162, 54, 388, 426)]"
+2025-09-10T22:34:56.728015,0,No person detected,0,[]
+2025-09-10T22:34:57.001553,0,Single person detected,1,"[(140, 47, 408, 433)]"
+2025-09-10T22:34:57.135588,0,No person detected,0,[]
+2025-09-10T22:34:57.639337,0,Single person detected,1,"[(145, 42, 412, 438)]"
+2025-09-10T22:34:57.921836,0,No person detected,0,[]
+2025-09-10T22:35:03.845097,0,Single person detected,1,"[(155, 194, 106, 159)]"
+2025-09-10T22:35:03.991090,0,No person detected,0,[]
+2025-09-10T22:35:04.150848,0,Single person detected,1,"[(156, 194, 104, 156)]"
+2025-09-10T22:35:04.306763,0,No person detected,0,[]
+2025-09-10T22:35:04.459364,0,Single person detected,1,"[(155, 192, 108, 162)]"
+2025-09-10T22:35:04.617093,0,No person detected,0,[]
+2025-09-10T22:35:05.400352,0,Single person detected,1,"[(155, 193, 106, 159)]"
+2025-09-10T22:35:06.069832,0,No person detected,0,[]
+2025-09-10T22:35:06.232816,0,Single person detected,1,"[(155, 194, 106, 159)]"
+2025-09-10T22:35:06.392817,0,No person detected,0,[]
+2025-09-10T22:35:08.902492,0,Single person detected,1,"[(156, 82, 376, 398)]"
+2025-09-10T22:35:09.411852,0,No person detected,0,[]
+2025-09-10T22:35:10.604276,0,Single person detected,1,"[(75, 51, 410, 429)]"
