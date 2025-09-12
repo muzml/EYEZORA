@@ -1,100 +1,76 @@
-#!/usr/bin/env python3
-"""
-yolo_head_detector.py
-High-accuracy detector using YOLOv8 (Ultralytics).
-Detects persons (full/upper body) with much higher accuracy than Haar/HOG.
-
-Usage:
-- Webcam: python yolo_head_detector.py --source 0
-- Image:  python yolo_head_detector.py --source test.jpg --output result.jpg
-"""
-
-import argparse
-import cv2
-import os
-from datetime import datetime
 from ultralytics import YOLO
+import cv2
+from logger import log_event   # ✅ import our logger
 
-def annotate_frame(frame, boxes):
-    n = len(boxes)
-    if n == 0:
-        label = "No person detected"
-        color = (0, 0, 255)
-    elif n == 1:
-        label = "Single person detected"
-        color = (0, 255, 0)
+# Load YOLOv8 model
+model = YOLO("yolov8s.pt")
+
+# Open webcam
+cap = cv2.VideoCapture(0)
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+
+    # Run YOLO detection
+    results = model(frame, conf=0.5)
+
+    persons = 0
+    warnings = []
+
+    for r in results:
+        boxes = r.boxes
+        for box in boxes:
+            cls = int(box.cls[0])
+            conf = float(box.conf[0])
+            label = model.names[cls].lower()
+
+            # Person detection
+            if label == "person":
+                x1, y1, x2, y2 = map(int, box.xyxy[0].tolist())
+                area = (x2 - x1) * (y2 - y1)
+                if area > 5000:
+                    persons += 1
+
+            # Restricted objects
+            if label in ["cell phone", "book", "paper"]:
+                msg = f"Warning {label} detected! (conf {conf:.2f})"
+                warnings.append(msg)
+                log_event(msg, "WARNING")   # ✅ log event
+
+            # Allowed objects
+            elif label in ["bottle", "cup", "glass", "steel glass"]:
+                msg = f"Detected: {label} ({conf:.2f})"
+                cv2.putText(frame, msg, (50, 100),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
+                log_event(msg, "INFO")   # ✅ log event
+
+    # Person detection rules
+    if persons == 0:
+        msg = "Warning No person detected!"
+        warnings.append(msg)
+        log_event(msg, "WARNING")
+    elif persons > 1:
+        msg = "Warning More than one person detected!"
+        warnings.append(msg)
+        log_event(msg, "WARNING")
     else:
-        label = f"{n} people detected"
-        color = (0, 255, 255)
-    for (x1, y1, x2, y2) in boxes:
-        cv2.rectangle(frame, (x1, y1), (x2, y2), color, 2)
-    cv2.putText(frame, label, (10,30), cv2.FONT_HERSHEY_SIMPLEX, 0.9, color, 2)
-    return frame, label
+        log_event("Exactly one person detected.", "INFO")
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument('--source', default='0', help="0 for webcam, or path to image/video")
-    ap.add_argument('--output', default=None, help="Output file for annotated image")
-    args = ap.parse_args()
+    # Show warnings on screen
+    y_offset = 50
+    for w in warnings:
+        cv2.putText(frame, w, (50, y_offset),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 2)
+        y_offset += 40
 
-    # Load YOLOv8 pretrained on COCO (person class = 0)
-    model = YOLO("yolov8n.pt")  # 'n' = nano (fastest); try yolov8s.pt for better accuracy
+    # Display output
+    cv2.imshow("Exam Monitor", frame)
 
-    src = args.source
-    try:
-        src = int(src)
-    except ValueError:
-        pass
+    # Press 'q' to quit
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
 
-    # If source is webcam or video
-    if str(src).isdigit() or os.path.splitext(str(src))[-1].lower() in ['.mp4','.avi','.mov']:
-        cap = cv2.VideoCapture(src)
-        if not cap.isOpened():
-            print("❌ Error: Cannot open source", src)
-            return
-        print("✅ YOLOv8 running (press 'q' to quit)...")
-        while True:
-            ret, frame = cap.read()
-            if not ret:
-                break
-            results = model(frame, verbose=False)
-            persons = []
-            for r in results[0].boxes:
-                cls = int(r.cls)
-                if cls == 0:  # 'person' class
-                    x1, y1, x2, y2 = map(int, r.xyxy[0].tolist())
-                    persons.append((x1,y1,x2,y2))
-
-            frame, label = annotate_frame(frame, persons)
-            ts = datetime.now().strftime("%H:%M:%S")
-            cv2.putText(frame, ts, (10,60), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255,255,255), 2)
-
-            cv2.imshow("YOLO Head Detector", frame)
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                break
-        cap.release()
-        cv2.destroyAllWindows()
-
-    # If single image
-    else:
-        img = cv2.imread(src)
-        if img is None:
-            print("❌ Error: Cannot read image", src)
-            return
-        results = model(img, verbose=False)
-        persons = []
-        for r in results[0].boxes:
-            cls = int(r.cls)
-            if cls == 0:
-                x1, y1, x2, y2 = map(int, r.xyxy[0].tolist())
-                persons.append((x1,y1,x2,y2))
-        img, label = annotate_frame(img, persons)
-        if args.output:
-            cv2.imwrite(args.output, img)
-            print("✅ Wrote annotated image to", args.output)
-        cv2.imshow("YOLO Head Detector", img)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
-
-if __name__ == "__main__":
-    main()
+cap.release()
+cv2.destroyAllWindows()
