@@ -1184,3 +1184,295 @@
 [2025-09-13 23:14:09] INFO: Exactly one person detected.
 [2025-09-13 23:14:09] INFO: Exactly one person detected.
 [2025-09-13 23:14:09] INFO: Exactly one person detected.
+[2025-09-14 21:42:14] INFO: Exactly one person detected.
+[2025-09-14 21:42:15] INFO: Gaze direction: Center
+[2025-09-14 21:42:15] INFO: Exactly one person detected.
+[2025-09-14 21:42:15] INFO: Exactly one person detected.
+[2025-09-14 21:42:15] INFO: Gaze direction: Left
+[2025-09-14 21:42:15] INFO: Exactly one person detected.
+[2025-09-14 21:42:16] INFO: Gaze direction: Center
+[2025-09-14 21:42:16] INFO: Exactly one person detected.
+[2025-09-14 21:42:16] INFO: Gaze direction: Center
+[2025-09-14 21:42:16] INFO: Exactly one person detected.
+[2025-09-14 21:42:16] INFO: Gaze direction: Center
+[2025-09-14 21:42:16] INFO: Exactly one person detected.
+[2025-09-14 21:42:16] INFO: Gaze direction: Left
+[2025-09-14 21:42:16] INFO: Exactly one person detected.
+[2025-09-14 21:42:16] INFO: Gaze direction: Center
+[2025-09-14 21:42:16] INFO: Exactly one person detected.
+[2025-09-14 21:42:17] INFO: Gaze direction: Center
+[2025-09-14 21:42:17] INFO: Exactly one person detected.
+[2025-09-14 21:42:17] INFO: Gaze direction: Center
+[2025-09-14 21:42:17] INFO: Exactly one person detected.
+[2025-09-14 21:42:17] INFO: Gaze direction: Center
+[2025-09-14 21:42:17] INFO: Exactly one person detected.
+[2025-09-14 21:42:17] INFO: Gaze direction: Left
+[2025-09-14 21:42:17] INFO: Exactly one person detected.
+[2025-09-14 21:42:18] INFO: Gaze direction: Center
+[2025-09-14 21:42:18] INFO: Exactly one person detected.
+[2025-09-14 21:42:18] INFO: Gaze direction: Left
+[2025-09-14 21:42:18] INFO: Exactly one person detected.
+[2025-09-14 21:42:18] INFO: Gaze direction: Center
+[2025-09-14 21:42:18] INFO: Exactly one person detected.
+[2025-09-14 21:42:18] INFO: Exactly one person detected.
+[2025-09-14 21:42:19] INFO: Gaze direction: Left
+[2025-09-14 21:42:19] INFO: Exactly one person detected.
+[2025-09-14 21:42:19] INFO: Gaze direction: Left
+[2025-09-14 21:42:19] INFO: Exactly one person detected.
+[2025-09-14 21:42:19] INFO: Gaze direction: Left
+[2025-09-14 21:42:19] INFO: Exactly one person detected.
+[2025-09-14 21:42:19] INFO: Gaze direction: Left
+[2025-09-14 21:42:19] INFO: Exactly one person detected.
+[2025-09-14 21:42:19] INFO: Gaze direction: Left
+[2025-09-14 21:42:19] WARNING: Warning: Not looking at screen!
+[2025-09-14 21:42:20] INFO: Exactly one person detected.
+[2025-09-14 21:42:20] INFO: Gaze direction: Center
+[2025-09-14 21:42:20] INFO: Exactly one person detected.
+[2025-09-14 21:42:20] INFO: Gaze direction: Center
+[2025-09-14 21:42:20] INFO: Exactly one person detected.
+[2025-09-14 21:42:21] INFO: Gaze direction: Center
+[2025-09-14 21:42:21] INFO: Exactly one person detected.
+[2025-09-14 21:42:21] INFO: Gaze direction: Center
+[2025-09-14 21:42:21] INFO: Exactly one person detected.
+[2025-09-14 21:42:21] INFO: Gaze direction: Center
+[2025-09-14 21:42:21] INFO: Exactly one person detected.
+[2025-09-14 21:42:21] INFO: Gaze direction: Left
+[2025-09-14 21:42:21] INFO: Exactly one person detected.
+[2025-09-14 21:42:22] INFO: Gaze direction: Left
+[2025-09-14 21:42:22] INFO: Exactly one person detected.
+[2025-09-14 21:42:22] INFO: Gaze direction: Left
+[2025-09-14 21:42:22] INFO: Exactly one person detected.
+[2025-09-14 21:42:22] INFO: Gaze direction: Center
+[2025-09-14 21:42:22] INFO: Exactly one person detected.
+[2025-09-14 21:42:22] INFO: Gaze direction: Center
+[2025-09-14 21:42:22] INFO: Exactly one person detected.
+[2025-09-14 21:42:22] INFO: Gaze direction: Left
+[2025-09-14 21:42:22] INFO: Exactly one person detected.
+[2025-09-14 21:42:23] INFO: Gaze direction: Left
+[2025-09-14 21:42:23] INFO: Exactly one person detected.
+[2025-09-14 21:42:23] INFO: Gaze direction: Left
+[2025-09-14 21:42:23] INFO: Exactly one person detected.
+[2025-09-14 21:42:23] INFO: Gaze direction: Center
+[2025-09-14 21:42:23] INFO: Exactly one person detected.
+[2025-09-14 21:42:23] INFO: Gaze direction: Left
+[2025-09-14 21:42:23] INFO: Exactly one person detected.
+[2025-09-14 21:42:24] INFO: Gaze direction: Center
+[2025-09-14 21:42:24] INFO: Exactly one person detected.
+[2025-09-14 21:42:24] INFO: Gaze direction: Center
+[2025-09-14 21:42:24] INFO: Exactly one person detected.
+[2025-09-14 21:42:24] INFO: Gaze direction: Left
+[2025-09-14 21:42:24] INFO: Exactly one person detected.
+[2025-09-14 21:42:24] INFO: Gaze direction: Left
+[2025-09-14 21:42:24] INFO: Exactly one person detected.
+[2025-09-14 21:42:24] INFO: Gaze direction: Center
+[2025-09-14 21:42:24] INFO: Exactly one person detected.
+[2025-09-14 21:42:25] INFO: Gaze direction: Left
+[2025-09-14 21:42:25] INFO: Exactly one person detected.
+[2025-09-14 21:42:25] INFO: Gaze direction: Left
+[2025-09-14 21:42:25] INFO: Exactly one person detected.
+[2025-09-14 21:42:25] INFO: Gaze direction: Left
+[2025-09-14 21:42:25] INFO: Exactly one person detected.
+[2025-09-14 21:42:25] INFO: Gaze direction: Left
+[2025-09-14 21:42:25] INFO: Exactly one person detected.
+[2025-09-14 21:42:26] INFO: Gaze direction: Left
+[2025-09-14 21:42:26] WARNING: Warning: Not looking at screen!
+[2025-09-14 21:42:26] INFO: Exactly one person detected.
+[2025-09-14 21:42:26] INFO: Gaze direction: Center
+[2025-09-14 21:42:26] INFO: Exactly one person detected.
+[2025-09-14 21:42:27] INFO: Gaze direction: Left
+[2025-09-14 21:42:27] INFO: Exactly one person detected.
+[2025-09-14 21:42:27] INFO: Gaze direction: Center
+[2025-09-14 21:42:27] INFO: Exactly one person detected.
+[2025-09-14 21:42:27] INFO: Gaze direction: Center
+[2025-09-14 21:42:27] INFO: Exactly one person detected.
+[2025-09-14 21:42:27] INFO: Gaze direction: Left
+[2025-09-14 21:42:27] INFO: Exactly one person detected.
+[2025-09-14 21:42:28] INFO: Gaze direction: Left
+[2025-09-14 21:42:28] INFO: Exactly one person detected.
+[2025-09-14 21:42:28] INFO: Gaze direction: Left
+[2025-09-14 21:42:28] INFO: Exactly one person detected.
+[2025-09-14 21:42:28] INFO: Gaze direction: Center
+[2025-09-14 21:42:28] INFO: Exactly one person detected.
+[2025-09-14 21:42:28] INFO: Gaze direction: Left
+[2025-09-14 21:42:28] INFO: Exactly one person detected.
+[2025-09-14 21:42:29] INFO: Gaze direction: Left
+[2025-09-14 21:42:29] INFO: Exactly one person detected.
+[2025-09-14 21:42:29] INFO: Gaze direction: Left
+[2025-09-14 21:42:29] INFO: Exactly one person detected.
+[2025-09-14 21:42:29] INFO: Gaze direction: Left
+[2025-09-14 21:42:29] INFO: Exactly one person detected.
+[2025-09-14 21:42:29] INFO: Gaze direction: Center
+[2025-09-14 21:42:29] INFO: Exactly one person detected.
+[2025-09-14 21:42:29] INFO: Gaze direction: Center
+[2025-09-14 21:42:29] INFO: Exactly one person detected.
+[2025-09-14 21:42:30] INFO: Gaze direction: Center
+[2025-09-14 21:42:30] INFO: Exactly one person detected.
+[2025-09-14 21:42:30] INFO: Gaze direction: Center
+[2025-09-14 21:42:30] INFO: Exactly one person detected.
+[2025-09-14 21:42:30] INFO: Gaze direction: Center
+[2025-09-14 21:42:30] INFO: Exactly one person detected.
+[2025-09-14 21:42:30] INFO: Gaze direction: Center
+[2025-09-14 21:42:30] INFO: Exactly one person detected.
+[2025-09-14 21:42:31] INFO: Gaze direction: Center
+[2025-09-14 21:42:31] INFO: Exactly one person detected.
+[2025-09-14 21:42:31] INFO: Gaze direction: Center
+[2025-09-14 21:42:31] INFO: Exactly one person detected.
+[2025-09-14 21:42:31] INFO: Gaze direction: Center
+[2025-09-14 21:42:31] INFO: Exactly one person detected.
+[2025-09-14 21:42:31] INFO: Gaze direction: Center
+[2025-09-14 21:42:31] INFO: Exactly one person detected.
+[2025-09-14 21:42:32] INFO: Gaze direction: Left
+[2025-09-14 21:42:32] INFO: Exactly one person detected.
+[2025-09-14 21:42:32] INFO: Gaze direction: Center
+[2025-09-14 21:42:32] INFO: Exactly one person detected.
+[2025-09-14 21:42:32] INFO: Gaze direction: Center
+[2025-09-14 21:42:32] INFO: Exactly one person detected.
+[2025-09-14 21:42:32] INFO: Gaze direction: Center
+[2025-09-14 21:42:32] INFO: Exactly one person detected.
+[2025-09-14 21:42:32] INFO: Gaze direction: Center
+[2025-09-14 21:42:32] INFO: Exactly one person detected.
+[2025-09-14 21:42:33] INFO: Gaze direction: Center
+[2025-09-14 21:42:33] INFO: Exactly one person detected.
+[2025-09-14 21:42:33] INFO: Gaze direction: Left
+[2025-09-14 21:42:33] INFO: Exactly one person detected.
+[2025-09-14 21:42:33] INFO: Gaze direction: Center
+[2025-09-14 21:42:33] INFO: Exactly one person detected.
+[2025-09-14 21:42:33] INFO: Gaze direction: Left
+[2025-09-14 21:42:33] INFO: Exactly one person detected.
+[2025-09-14 21:42:34] INFO: Gaze direction: Center
+[2025-09-14 21:42:34] INFO: Exactly one person detected.
+[2025-09-14 21:42:34] INFO: Gaze direction: Left
+[2025-09-14 21:42:34] INFO: Exactly one person detected.
+[2025-09-14 21:42:34] INFO: Gaze direction: Center
+[2025-09-14 21:42:34] INFO: Exactly one person detected.
+[2025-09-14 21:42:34] INFO: Gaze direction: Center
+[2025-09-14 21:42:34] INFO: Exactly one person detected.
+[2025-09-14 21:42:35] INFO: Gaze direction: Center
+[2025-09-14 21:42:35] INFO: Exactly one person detected.
+[2025-09-14 21:42:35] INFO: Gaze direction: Center
+[2025-09-14 21:42:35] INFO: Exactly one person detected.
+[2025-09-14 21:42:35] INFO: Gaze direction: Center
+[2025-09-14 21:42:35] INFO: Exactly one person detected.
+[2025-09-14 21:42:35] INFO: Gaze direction: Center
+[2025-09-14 21:42:35] INFO: Exactly one person detected.
+[2025-09-14 21:42:35] INFO: Gaze direction: Center
+[2025-09-14 21:42:35] INFO: Exactly one person detected.
+[2025-09-14 21:42:36] INFO: Gaze direction: Center
+[2025-09-14 21:42:36] INFO: Exactly one person detected.
+[2025-09-14 21:42:36] INFO: Gaze direction: Center
+[2025-09-14 21:42:36] INFO: Exactly one person detected.
+[2025-09-14 21:42:36] INFO: Gaze direction: Center
+[2025-09-14 21:42:36] INFO: Exactly one person detected.
+[2025-09-14 21:42:36] INFO: Gaze direction: Center
+[2025-09-14 21:42:36] INFO: Exactly one person detected.
+[2025-09-14 21:42:37] INFO: Gaze direction: Center
+[2025-09-14 21:42:37] INFO: Exactly one person detected.
+[2025-09-14 21:42:37] INFO: Gaze direction: Center
+[2025-09-14 21:42:37] INFO: Exactly one person detected.
+[2025-09-14 21:42:37] INFO: Gaze direction: Center
+[2025-09-14 21:42:37] INFO: Exactly one person detected.
+[2025-09-14 21:42:37] INFO: Gaze direction: Center
+[2025-09-14 21:42:37] INFO: Exactly one person detected.
+[2025-09-14 21:42:38] INFO: Gaze direction: Center
+[2025-09-14 21:42:38] INFO: Exactly one person detected.
+[2025-09-14 21:42:38] INFO: Gaze direction: Center
+[2025-09-14 21:42:38] INFO: Exactly one person detected.
+[2025-09-14 21:42:38] INFO: Gaze direction: Center
+[2025-09-14 21:42:38] INFO: Exactly one person detected.
+[2025-09-14 21:42:38] INFO: Gaze direction: Center
+[2025-09-14 21:42:38] INFO: Exactly one person detected.
+[2025-09-14 21:42:38] INFO: Gaze direction: Center
+[2025-09-14 21:42:38] INFO: Exactly one person detected.
+[2025-09-14 21:42:39] INFO: Gaze direction: Center
+[2025-09-14 21:42:39] INFO: Exactly one person detected.
+[2025-09-14 21:42:39] INFO: Gaze direction: Left
+[2025-09-14 21:42:39] INFO: Exactly one person detected.
+[2025-09-14 21:42:39] INFO: Exactly one person detected.
+[2025-09-14 21:42:39] INFO: Gaze direction: Center
+[2025-09-14 21:42:39] INFO: Exactly one person detected.
+[2025-09-14 21:42:40] INFO: Gaze direction: Center
+[2025-09-14 21:42:40] INFO: Exactly one person detected.
+[2025-09-14 21:42:40] INFO: Gaze direction: Center
+[2025-09-14 21:42:40] INFO: Exactly one person detected.
+[2025-09-14 21:42:40] INFO: Gaze direction: Center
+[2025-09-14 21:42:40] INFO: Exactly one person detected.
+[2025-09-14 21:42:40] INFO: Gaze direction: Center
+[2025-09-14 21:42:40] INFO: Exactly one person detected.
+[2025-09-14 21:42:41] INFO: Gaze direction: Center
+[2025-09-14 21:42:41] INFO: Exactly one person detected.
+[2025-09-14 21:42:41] INFO: Gaze direction: Center
+[2025-09-14 21:42:41] INFO: Exactly one person detected.
+[2025-09-14 21:42:41] INFO: Gaze direction: Center
+[2025-09-14 21:42:41] INFO: Exactly one person detected.
+[2025-09-14 21:42:41] INFO: Gaze direction: Right
+[2025-09-14 21:42:41] INFO: Exactly one person detected.
+[2025-09-14 21:42:42] INFO: Gaze direction: Center
+[2025-09-14 21:42:42] INFO: Exactly one person detected.
+[2025-09-14 21:42:42] INFO: Gaze direction: Center
+[2025-09-14 21:42:42] INFO: Exactly one person detected.
+[2025-09-14 21:42:42] INFO: Exactly one person detected.
+[2025-09-14 21:42:42] INFO: Gaze direction: Center
+[2025-09-14 21:42:42] INFO: Exactly one person detected.
+[2025-09-14 21:42:42] INFO: Gaze direction: Center
+[2025-09-14 21:42:42] INFO: Exactly one person detected.
+[2025-09-14 21:42:43] INFO: Gaze direction: Center
+[2025-09-14 21:42:43] INFO: Exactly one person detected.
+[2025-09-14 21:42:43] INFO: Gaze direction: Center
+[2025-09-14 21:42:43] INFO: Exactly one person detected.
+[2025-09-14 21:42:43] INFO: Gaze direction: Center
+[2025-09-14 21:42:43] INFO: Exactly one person detected.
+[2025-09-14 21:42:43] INFO: Gaze direction: Center
+[2025-09-14 21:42:43] INFO: Exactly one person detected.
+[2025-09-14 21:42:44] INFO: Gaze direction: Center
+[2025-09-14 21:42:44] INFO: Exactly one person detected.
+[2025-09-14 21:42:44] INFO: Gaze direction: Center
+[2025-09-14 21:42:44] INFO: Exactly one person detected.
+[2025-09-14 21:42:44] INFO: Gaze direction: Center
+[2025-09-14 21:42:44] INFO: Exactly one person detected.
+[2025-09-14 21:42:44] INFO: Gaze direction: Left
+[2025-09-14 21:42:44] INFO: Exactly one person detected.
+[2025-09-14 21:42:45] INFO: Gaze direction: Center
+[2025-09-14 21:42:45] INFO: Exactly one person detected.
+[2025-09-14 21:42:45] INFO: Gaze direction: Left
+[2025-09-14 21:42:45] INFO: Exactly one person detected.
+[2025-09-14 21:42:45] INFO: Gaze direction: Left
+[2025-09-14 21:42:45] INFO: Exactly one person detected.
+[2025-09-14 21:42:45] INFO: Gaze direction: Left
+[2025-09-14 21:42:45] INFO: Exactly one person detected.
+[2025-09-14 21:42:45] INFO: Gaze direction: Center
+[2025-09-14 21:42:45] INFO: Exactly one person detected.
+[2025-09-14 21:42:46] INFO: Gaze direction: Left
+[2025-09-14 21:42:46] INFO: Exactly one person detected.
+[2025-09-14 21:42:46] INFO: Gaze direction: Left
+[2025-09-14 21:42:46] INFO: Exactly one person detected.
+[2025-09-14 21:42:46] INFO: Gaze direction: Left
+[2025-09-14 21:42:46] INFO: Exactly one person detected.
+[2025-09-14 21:42:46] INFO: Gaze direction: Left
+[2025-09-14 21:42:46] INFO: Exactly one person detected.
+[2025-09-14 21:42:46] INFO: Gaze direction: Left
+[2025-09-14 21:42:46] WARNING: Warning: Not looking at screen!
+[2025-09-14 21:42:47] INFO: Exactly one person detected.
+[2025-09-14 21:42:47] WARNING: Warning cell phone detected! (conf 0.92)
+[2025-09-14 21:42:48] INFO: Gaze direction: Left
+[2025-09-14 21:42:48] WARNING: Warning: Not looking at screen!
+[2025-09-14 21:42:48] INFO: Exactly one person detected.
+[2025-09-14 21:42:48] WARNING: Warning cell phone detected! (conf 0.96)
+[2025-09-14 21:42:49] INFO: Gaze direction: Left
+[2025-09-14 21:42:49] WARNING: Warning: Not looking at screen!
+[2025-09-14 21:42:49] INFO: Exactly one person detected.
+[2025-09-14 21:42:50] INFO: Gaze direction: Left
+[2025-09-14 21:42:50] WARNING: Warning: Not looking at screen!
+[2025-09-14 21:42:50] INFO: Exactly one person detected.
+[2025-09-14 21:42:50] INFO: Gaze direction: Center
+[2025-09-14 21:42:50] INFO: Exactly one person detected.
+[2025-09-14 21:42:51] INFO: Gaze direction: Left
+[2025-09-14 21:42:51] INFO: Exactly one person detected.
+[2025-09-14 21:42:51] INFO: Gaze direction: Left
+[2025-09-14 21:42:51] INFO: Exactly one person detected.
+[2025-09-14 21:42:51] INFO: Gaze direction: Left
+[2025-09-14 21:42:51] INFO: Exactly one person detected.
+[2025-09-14 21:42:51] INFO: Gaze direction: Left
+[2025-09-14 21:42:51] INFO: Exactly one person detected.
+[2025-09-14 21:42:52] INFO: Gaze direction: Left
+[2025-09-14 21:42:52] WARNING: Warning: Not looking at screen!
+[2025-09-14 21:42:52] INFO: Exactly one person detected.
