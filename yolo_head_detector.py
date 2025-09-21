@@ -1,8 +1,8 @@
 from ultralytics import YOLO
 import cv2
+import numpy as np
 from logger import log_event
 from sound_alert import play_warning_sound
-import numpy as np
 
 # Load YOLOv8 model
 model = YOLO("yolov8s.pt")
