@@ -12,6 +12,8 @@ eye_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_eye.xml
 
 # Open webcam
 cap = cv2.VideoCapture(0)
+
+# For smoothing gaze detectin over frames
 gaze_buffer = []
 BUFFER_SIZE = 5  # check gaze over 5 frames before warning
 
@@ -39,11 +41,11 @@ def check_gaze_buffer(buffer):
     return "Center"
 
 while True:
-    ret, frame = cap.read()
+    ret, frame=cap.read()
     if not ret:
         break
 
-    results = model(frame, conf=0.5)
+    results=model(frame, conf=0.5)
     persons = 0
     warnings = []
 
@@ -60,7 +62,7 @@ while True:
                 if area > 5000:
                     persons += 1
 
-                # Eye-gaze detection inside face region
+                # Eye-gaze detection inside the face region
                 face_region = frame[y1:y2, x1:x2]
                 gray_face = cv2.cvtColor(face_region, cv2.COLOR_BGR2GRAY)
                 eyes = eye_cascade.detectMultiScale(gray_face, 1.1, 4)
