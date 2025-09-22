@@ -12,8 +12,6 @@ eye_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_eye.xml
 
 # Open webcam
 cap = cv2.VideoCapture(0)
-
-# For smoothing gaze detection over frames
 gaze_buffer = []
 BUFFER_SIZE = 5  # check gaze over 5 frames before warning
 
