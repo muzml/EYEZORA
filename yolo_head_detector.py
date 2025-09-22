@@ -41,11 +41,11 @@ def check_gaze_buffer(buffer):
     return "Center"
 
 while True:
-    ret, frame=cap.read()
+    ret, frame = cap.read()
     if not ret:
         break
 
-    results=model(frame, conf=0.5)
+    results = model(frame, conf=0.5)
     persons = 0
     warnings = []
 
