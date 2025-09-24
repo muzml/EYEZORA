@@ -1,6 +1,0 @@
-train: C:/Users/parve/OneDrive/Documents/EyeZora/face_dataset/train/images
-val: C:/Users/parve/OneDrive/Documents/EyeZora/face_dataset/valid/images
-test: C:/Users/parve/OneDrive/Documents/EyeZora/face_dataset/test/images
-
-nc: 1
-names: ['face']
