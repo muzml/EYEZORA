@@ -1,18 +1,8 @@
-# Python
+# Ignore datasets, weights, runs, logs, venv
+roboflow_dataset/
+*.zip
+*.pt
+runs/
 __pycache__/
-*.pyc
-
-# VS Code
-.vscode/
-
-# Virtual environment
-venv/
-
-# OS files
-.DS_Store
-
-# YOLO model
-yolov8n.pt
-
-# Log files (optional)
-*.csv
+.venv/
+*.log
