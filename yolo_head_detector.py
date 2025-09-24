@@ -4,8 +4,8 @@ import numpy as np
 from logger import log_event
 from sound_alert import play_warning_sound
 
-# Load YOLOv8 model
-model = YOLO("yolov8s.pt")
+# Load your trained YOLO model
+model = YOLO("runs/detect/train5/weights/best.pt")  # update path if different
 
 # Load Haar cascades for eye detection
 eye_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_eye.xml")
@@ -13,9 +13,10 @@ eye_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_eye.xml
 # Open webcam
 cap = cv2.VideoCapture(0)
 
-# For smoothing gaze detectin over frames
+# For smoothing gaze detection over frames
 gaze_buffer = []
 BUFFER_SIZE = 5  # check gaze over 5 frames before warning
+
 
 def get_gaze_direction(eye_img):
     gray_eye = cv2.cvtColor(eye_img, cv2.COLOR_BGR2GRAY)
@@ -23,15 +24,16 @@ def get_gaze_direction(eye_img):
     _, thresh = cv2.threshold(gray_eye, 50, 255, cv2.THRESH_BINARY_INV)
     moments = cv2.moments(thresh)
     if moments['m00'] != 0:
-        cx = int(moments['m10']/moments['m00'])
+        cx = int(moments['m10'] / moments['m00'])
         w = eye_img.shape[1]
-        if cx < w/3:
+        if cx < w / 3:
             return "Left"
-        elif cx > 2*w/3:
+        elif cx > 2 * w / 3:
             return "Right"
         else:
             return "Center"
     return "Unknown"
+
 
 def check_gaze_buffer(buffer):
     if len(buffer) < BUFFER_SIZE:
@@ -39,6 +41,7 @@ def check_gaze_buffer(buffer):
     if all(g != "Center" for g in buffer):
         return "Away"
     return "Center"
+
 
 while True:
     ret, frame = cap.read()
@@ -56,48 +59,55 @@ while True:
             conf = float(box.conf[0])
             label = model.names[cls].lower()
 
+            x1, y1, x2, y2 = map(int, box.xyxy[0].tolist())
+
+            # Draw bounding box and label
+            cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
+            cv2.putText(frame, f"{label} {conf:.2f}", (x1, y1 - 10),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
+
             if label == "person":
-                x1, y1, x2, y2 = map(int, box.xyxy[0].tolist())
                 area = (x2 - x1) * (y2 - y1)
                 if area > 5000:
                     persons += 1
 
                 # Eye-gaze detection inside the face region
-                face_region = frame[y1:y2, x1:x2]
-                gray_face = cv2.cvtColor(face_region, cv2.COLOR_BGR2GRAY)
-                eyes = eye_cascade.detectMultiScale(gray_face, 1.1, 4)
+                if 0 <= x1 < x2 <= frame.shape[1] and 0 <= y1 < y2 <= frame.shape[0]:
+                    face_region = frame[y1:y2, x1:x2]
+                    gray_face = cv2.cvtColor(face_region, cv2.COLOR_BGR2GRAY)
+                    eyes = eye_cascade.detectMultiScale(gray_face, 1.1, 4)
 
-                eye_gazes = []
-                for (ex, ey, ew, eh) in eyes[:2]:  # consider max 2 eyes
-                    eye_img = face_region[ey:ey+eh, ex:ex+ew]
-                    gaze = get_gaze_direction(eye_img)
-                    eye_gazes.append(gaze)
+                    eye_gazes = []
+                    for (ex, ey, ew, eh) in eyes[:2]:  # consider max 2 eyes
+                        eye_img = face_region[ey:ey + eh, ex:ex + ew]
+                        gaze = get_gaze_direction(eye_img)
+                        eye_gazes.append(gaze)
 
-                # Average gaze of both eyes
-                if eye_gazes:
-                    if "Left" in eye_gazes:
-                        avg_gaze = "Left"
-                    elif "Right" in eye_gazes:
-                        avg_gaze = "Right"
-                    else:
-                        avg_gaze = "Center"
+                    # Average gaze of both eyes
+                    if eye_gazes:
+                        if "Left" in eye_gazes:
+                            avg_gaze = "Left"
+                        elif "Right" in eye_gazes:
+                            avg_gaze = "Right"
+                        else:
+                            avg_gaze = "Center"
 
-                    # Log the gaze direction
-                    log_event(f"Gaze direction: {avg_gaze}", "INFO")
+                        # Log the gaze direction
+                        log_event(f"Gaze direction: {avg_gaze}", "INFO")
 
-                    gaze_buffer.append(avg_gaze)
-                    if len(gaze_buffer) > BUFFER_SIZE:
-                        gaze_buffer.pop(0)
+                        gaze_buffer.append(avg_gaze)
+                        if len(gaze_buffer) > BUFFER_SIZE:
+                            gaze_buffer.pop(0)
 
-                    overall_gaze = check_gaze_buffer(gaze_buffer)
-                    cv2.putText(frame, f"Gaze: {avg_gaze}", (x1, y1-20),
-                                cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 255), 2)
+                        overall_gaze = check_gaze_buffer(gaze_buffer)
+                        cv2.putText(frame, f"Gaze: {avg_gaze}", (x1, y1 - 25),
+                                    cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 255), 2)
 
-                    if overall_gaze == "Away":
-                        msg = "Warning: Not looking at screen!"
-                        warnings.append(msg)
-                        log_event(msg, "WARNING")
-                        play_warning_sound()
+                        if overall_gaze == "Away":
+                            msg = "Warning: Not looking at screen!"
+                            warnings.append(msg)
+                            log_event(msg, "WARNING")
+                            play_warning_sound()
 
             # Restricted objects
             if label in ["cell phone", "book", "paper"]:
@@ -139,6 +149,6 @@ while True:
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
-    
+
 cap.release()
 cv2.destroyAllWindows()

@@ -1,12 +1,30 @@
 from ultralytics import YOLO
+import cv2
+import os
 
-# Load your trained model (best.pt from training)
-model = YOLO("D:/ME/EyeZora/face_detection/runs/detect/train3/weights/best.pt")
+# Load your trained model
+model = YOLO("best.pt")
 
-# Path to your test images folder
-test_images = "D:/ME/EyeZora/face_detection/test/images"
+# Path to test images folder
+test_dir = "test_images"
 
-# Run prediction on the folder
-results = model.predict(source=test_images, save=True, project="runs/detect", name="custom_test", exist_ok=True)
+# Valid image extensions
+valid_exts = [".jpg", ".jpeg", ".png", ".bmp", ".webp"]
 
-print("✅ Predictions completed! Check results inside: runs/detect/custom_test")
+# Loop through each image in the test folder
+for img_name in os.listdir(test_dir):
+    if not any(img_name.lower().endswith(ext) for ext in valid_exts):
+        continue  # Skip non-image files like desktop.ini
+
+    img_path = os.path.join(test_dir, img_name)
+
+    # Run inference
+    results = model(img_path, save=True, show=True)
+
+    # Optional: display using OpenCV
+    for result in results:
+        annotated = result.plot()
+        cv2.imshow("Result", annotated)
+        cv2.waitKey(0)
+
+cv2.destroyAllWindows()
