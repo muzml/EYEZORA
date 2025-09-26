@@ -28,7 +28,6 @@ while True:
     # Show frame
     cv2.imshow("Webcam - Person Detection", frame)
 
-    # Quit with 'q'
     if cv2.waitKey(1) & 0xFF == ord("q"):
         break
 
