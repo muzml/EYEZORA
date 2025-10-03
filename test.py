@@ -7,6 +7,7 @@ model = YOLO("best.pt")   # replace with "best.pt" if you trained your own
 # Open webcam
 cap = cv2.VideoCapture(0)  # 0 = default camera
 
+
 while True:
     ret, frame = cap.read()
     if not ret:
