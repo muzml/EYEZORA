@@ -12,6 +12,5 @@ def log_event(message, level="INFO"):
     with open(LOG_FILE, "a") as f:
         f.write(log_message + "\n")
 
-
     # Also print on console
     print(log_message)
