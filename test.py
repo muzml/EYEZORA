@@ -64,7 +64,7 @@ while True:
                 cv2.putText(frame, "Face", (x1, y1 - 10),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.9, (255, 0, 0), 2)
 
-    # Display face count
+    # Display face count:)
     cv2.putText(frame, f"Faces: {face_count}", (20, 50),
                 cv2.FONT_HERSHEY_SIMPLEX, 1.2, (0, 255, 255), 3)
 
