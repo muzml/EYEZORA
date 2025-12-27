@@ -18,10 +18,16 @@ export default function LoginPage() {
   return (
     <div
       className="
-        min-h-screen flex items-center justify-center
+        min-h-screen flex flex-col items-center justify-center
         bg-gradient-to-br from-[#3b0a45] via-[#5c145a] to-[#7a1c6b]
       "
     >
+      {/* EYEZORA BRAND */}
+      <h1 className="text-5xl font-extrabold text-white tracking-widest mb-10">
+        EYEZORA
+      </h1>
+
+      {/* LOGIN CARD */}
       <div
         className="
           backdrop-blur-xl bg-white/70

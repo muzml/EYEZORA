@@ -1,22 +1,66 @@
-export default function Sidebar({ role }: { role: "admin" | "student" }) {
-  return (
-    <div className="w-64 min-h-screen bg-gray-900 text-white p-6">
-      <h2 className="text-xl font-bold mb-6">EYEZORA</h2>
+"use client";
 
-      {role === "admin" ? (
-        <>
-          <p className="mb-3 cursor-pointer">Dashboard</p>
-          <p className="mb-3 cursor-pointer">Create Test</p>
-          <p className="mb-3 cursor-pointer">Live Monitor</p>
-          <p className="mb-3 cursor-pointer">Reports</p>
-        </>
-      ) : (
-        <>
-          <p className="mb-3 cursor-pointer">My Exam</p>
-          <p className="mb-3 cursor-pointer">Instructions</p>
-          <p className="mb-3 cursor-pointer">Result</p>
-        </>
-      )}
+export default function Sidebar({
+  role,
+}: {
+  role: "student" | "admin";
+}) {
+  return (
+    <aside
+      className="
+        w-72 min-h-screen
+        bg-gradient-to-b from-black via-[#0a1633] to-black
+        border-r border-white/10
+        px-6 py-8
+      "
+    >
+      {/* Brand */}
+      <div className="mb-12">
+        <h1 className="text-2xl font-extrabold text-white tracking-wide">
+          EYEZORA
+        </h1>
+      </div>
+
+      {/* Navigation */}
+      <nav className="space-y-3">
+        {role === "student" ? (
+          <>
+            <Item label="My Exam" active />
+            <Item label="Instructions" />
+            <Item label="Result" />
+          </>
+        ) : (
+          <>
+            <Item label="Dashboard" active />
+            <Item label="Create Test" />
+            <Item label="Reports" />
+          </>
+        )}
+      </nav>
+    </aside>
+  );
+}
+
+function Item({
+  label,
+  active = false,
+}: {
+  label: string;
+  active?: boolean;
+}) {
+  return (
+    <div
+      className={`
+        px-4 py-3 rounded-xl cursor-pointer
+        font-medium transition-all
+        ${
+          active
+            ? "bg-gradient-to-r from-[#5c145a] to-[#7a1c6b] text-white shadow-lg"
+            : "text-white/70 hover:text-white hover:bg-white/10"
+        }
+      `}
+    >
+      {label}
     </div>
   );
 }
