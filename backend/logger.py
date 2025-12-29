@@ -1,16 +1,12 @@
-# logger.py
 import datetime
 
 LOG_FILE = "events.log"
 
-def log_event(message, level="INFO"):
-    """Logs events to a file with timestamp and log level."""
+def log_event(student_id, event_type, severity="HIGH"):
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    log_message = f"[{timestamp}] {level}: {message}"
+    message = f"[{timestamp}] [{severity}] Student:{student_id} - {event_type}"
 
-    # Write to log file
     with open(LOG_FILE, "a") as f:
-        f.write(log_message + "\n")
+        f.write(message + "\n")
 
-    # Also print on console
-    print(log_message)
+    print(message)
