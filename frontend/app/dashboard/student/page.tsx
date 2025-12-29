@@ -1,6 +1,11 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import Sidebar from "@/app/components/Sidebar";
 
 export default function StudentDashboard() {
+  const router = useRouter();
+
   return (
     <div
       className="
@@ -54,8 +59,9 @@ export default function StudentDashboard() {
             </ul>
           </div>
 
-          {/* Start Button */}
+          {/* Start Button (UPDATED) */}
           <button
+            onClick={() => router.push("/dashboard/student/exam")}
             className="
               w-full py-4 rounded-2xl
               text-white text-lg font-semibold
