@@ -1,10 +1,15 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 export default function Sidebar({
   role,
 }: {
   role: "student" | "admin";
 }) {
+  const pathname = usePathname();
+
   return (
     <aside
       className="
@@ -25,15 +30,39 @@ export default function Sidebar({
       <nav className="space-y-3">
         {role === "student" ? (
           <>
-            <Item label="My Exam" active />
-            <Item label="Instructions" />
-            <Item label="Result" />
+            <NavItem
+              label="My Exam"
+              href="/dashboard/student"
+              active={pathname === "/dashboard/student"}
+            />
+            <NavItem
+              label="Instructions"
+              href="/dashboard/student/instructions"
+              active={pathname.includes("instructions")}
+            />
+            <NavItem
+              label="Result"
+              href="/dashboard/student/result"
+              active={pathname.includes("result")}
+            />
           </>
         ) : (
           <>
-            <Item label="Dashboard" active />
-            <Item label="Create Test" />
-            <Item label="Reports" />
+            <NavItem
+              label="Dashboard"
+              href="/dashboard/admin"
+              active={pathname === "/dashboard/admin"}
+            />
+            <NavItem
+              label="Create Test"
+              href="/dashboard/admin/create-test"
+              active={pathname.includes("create-test")}
+            />
+            <NavItem
+              label="Reports"
+              href="/dashboard/admin/reports"
+              active={pathname.includes("reports")}
+            />
           </>
         )}
       </nav>
@@ -41,17 +70,22 @@ export default function Sidebar({
   );
 }
 
-function Item({
+/* ---------- Nav Item ---------- */
+
+function NavItem({
   label,
-  active = false,
+  href,
+  active,
 }: {
   label: string;
-  active?: boolean;
+  href: string;
+  active: boolean;
 }) {
   return (
-    <div
+    <Link
+      href={href}
       className={`
-        px-4 py-3 rounded-xl cursor-pointer
+        block px-4 py-3 rounded-xl
         font-medium transition-all
         ${
           active
@@ -61,6 +95,6 @@ function Item({
       `}
     >
       {label}
-    </div>
+    </Link>
   );
 }

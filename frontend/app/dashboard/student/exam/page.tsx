@@ -8,9 +8,10 @@ export default function ExamPage() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const STUDENT_ID = "STUDENT_21";
+  const EXAM_ID = "EXAM01";
 
   const [permissionGranted, setPermissionGranted] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(60 * 60);
+  const [timeLeft, setTimeLeft] = useState(60 * 60); // 1 hour
 
   const [faceLostSince, setFaceLostSince] = useState<number | null>(null);
   const [cameraLostSince, setCameraLostSince] = useState<number | null>(null);
@@ -18,23 +19,24 @@ export default function ExamPage() {
   const [faceViolated, setFaceViolated] = useState(false);
   const [cameraViolated, setCameraViolated] = useState(false);
 
-  /* 🔗 BACKEND LOGGER */
+  /* 🔗 LOG EVENT (Node / Mongo) */
   const logEvent = async (event: string) => {
     try {
-      await fetch("http://localhost:5000/log", {
+      await fetch("http://127.0.0.1:8000/verify-person", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           student_id: STUDENT_ID,
-          event,
+          exam_id: EXAM_ID,
+          ai_result: event,
         }),
       });
     } catch (err) {
-      console.error("Backend logging failed", err);
+      console.error("Logging failed", err);
     }
   };
 
-  /* ⛔ LOCK BACK NAVIGATION */
+  /* 🔒 BLOCK BACK BUTTON */
   useEffect(() => {
     history.pushState(null, "", location.href);
     window.onpopstate = () => history.go(1);
@@ -48,7 +50,6 @@ export default function ExamPage() {
       setTimeLeft((t) => {
         if (t <= 1) {
           clearInterval(timer);
-          logEvent("Exam finished");
           alert("Exam completed");
           router.push("/dashboard/student");
           return 0;
@@ -73,21 +74,48 @@ export default function ExamPage() {
       }
 
       setPermissionGranted(true);
-      logEvent("Camera & microphone access granted");
+      logEvent("CAMERA_GRANTED");
     } catch {
       alert("Camera & microphone permission is mandatory");
-      logEvent("Camera permission denied");
     }
   };
 
-  /* 👁 PROCTORING MONITOR (STABLE & LOCKED) */
+  /* 🧠 AI ANALYSIS (best.pt) */
+  const analyzeFrameWithAI = async () => {
+    if (!videoRef.current) return null;
+
+    const canvas = document.createElement("canvas");
+    canvas.width = videoRef.current.videoWidth;
+    canvas.height = videoRef.current.videoHeight;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return null;
+
+    ctx.drawImage(videoRef.current, 0, 0);
+    const image = canvas.toDataURL("image/jpeg");
+
+    const res = await fetch("http://127.0.0.1:8000/analyze-frame", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        image,
+        student_id: STUDENT_ID,
+        exam_id: EXAM_ID,
+      }),
+    });
+
+    const data = await res.json();
+    return data.ai_result; // MATCH | NO_FACE | MULTIPLE_FACES
+  };
+
+  /* 👁 AI PROCTORING LOOP */
   useEffect(() => {
     if (!permissionGranted || !videoRef.current) return;
 
-    const interval = setInterval(() => {
+    const interval = setInterval(async () => {
       const video = videoRef.current;
 
-      /* CAMERA DISCONNECT CHECK */
+      /* CAMERA CHECK */
       if (!video || video.readyState < 2) {
         if (!cameraLostSince) {
           setCameraLostSince(Date.now());
@@ -96,7 +124,7 @@ export default function ExamPage() {
           !cameraViolated
         ) {
           alert("⚠ Camera disconnected!");
-          logEvent("Camera disconnected for >5 seconds");
+          logEvent("CAMERA_DISCONNECTED");
           setCameraViolated(true);
         }
         return;
@@ -105,8 +133,10 @@ export default function ExamPage() {
         setCameraViolated(false);
       }
 
-      /* FACE VISIBILITY CHECK (SIMULATED) */
-      if (video.videoWidth === 0 || video.videoHeight === 0) {
+      /* AI FACE CHECK */
+      const aiResult = await analyzeFrameWithAI();
+
+      if (aiResult === "NO_FACE") {
         if (!faceLostSince) {
           setFaceLostSince(Date.now());
         } else if (
@@ -114,14 +144,17 @@ export default function ExamPage() {
           !faceViolated
         ) {
           alert("⚠ Face not visible!");
-          logEvent("Face not visible for >5 seconds");
+          logEvent("NO_FACE");
           setFaceViolated(true);
         }
+      } else if (aiResult === "MULTIPLE_FACES") {
+        alert("🚨 Multiple faces detected!");
+        logEvent("MULTIPLE_FACES");
       } else {
         setFaceLostSince(null);
         setFaceViolated(false);
       }
-    }, 2000);
+    }, 5000); // every 5 sec
 
     return () => clearInterval(interval);
   }, [
@@ -139,74 +172,44 @@ export default function ExamPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-[#0a1633] to-black text-white p-6">
-      {/* HEADER */}
-      <div className="flex justify-between items-center mb-6">
+    <div className="min-h-screen bg-black text-white p-6">
+      <div className="flex justify-between mb-6">
         <h1 className="text-xl font-bold">AI Proctored Examination</h1>
-        <div className="bg-white/10 px-4 py-2 rounded-xl font-semibold">
-          ⏱ {formatTime(timeLeft)}
-        </div>
+        <div>⏱ {formatTime(timeLeft)}</div>
       </div>
 
       {!permissionGranted ? (
-        /* PERMISSION SCREEN */
-        <div className="max-w-xl mx-auto bg-white text-black rounded-3xl p-8 shadow-2xl">
-          <h2 className="text-2xl font-bold mb-4">
-            Exam Rules & Permissions
-          </h2>
-
-          <ul className="list-disc ml-5 text-gray-700 space-y-2 mb-6">
-            <li>Camera must remain ON throughout the exam</li>
-            <li>No additional persons allowed</li>
-            <li>No mobile phones permitted</li>
-            <li>AI continuously monitors behavior</li>
+        <div className="max-w-xl mx-auto bg-white text-black p-6 rounded-xl">
+          <h2 className="text-xl font-bold mb-4">Exam Rules</h2>
+          <ul className="list-disc ml-5 mb-6">
+            <li>Camera must stay ON</li>
+            <li>Only one face allowed</li>
+            <li>No leaving the screen</li>
           </ul>
 
           <button
             onClick={startCamera}
-            className="w-full py-3 rounded-xl text-white font-semibold bg-gradient-to-r from-[#5c145a] to-[#7a1c6b]"
+            className="w-full bg-purple-700 text-white py-2 rounded"
           >
             Allow Camera & Microphone
           </button>
         </div>
       ) : (
-        /* EXAM SCREEN */
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-          {/* QUESTIONS */}
-          <div className="lg:col-span-3 bg-white text-black rounded-3xl p-8">
-            <h2 className="text-xl font-bold mb-4">Question 1</h2>
-            <p className="mb-6">
-              What is the main purpose of AI-based exam proctoring?
-            </p>
-
-            <div className="space-y-3">
-              <label className="block">
-                <input type="radio" name="q1" /> Prevent cheating
-              </label>
-              <label className="block">
-                <input type="radio" name="q1" /> Increase exam duration
-              </label>
-              <label className="block">
-                <input type="radio" name="q1" /> Replace invigilators
-              </label>
-              <label className="block">
-                <input type="radio" name="q1" /> None of the above
-              </label>
-            </div>
+        <div className="grid grid-cols-4 gap-6">
+          <div className="col-span-3 bg-white text-black p-6 rounded-xl">
+            <h2 className="font-bold mb-4">Question 1</h2>
+            <p>What is the purpose of AI proctoring?</p>
           </div>
 
-          {/* CAMERA FEED */}
-          <div className="bg-black/40 rounded-3xl p-4 text-center">
+          <div className="bg-gray-800 p-4 rounded-xl text-center">
             <video
               ref={videoRef}
               autoPlay
               muted
               playsInline
-              className="w-full h-40 rounded-xl object-cover"
+              className="w-full h-40 rounded"
             />
-            <p className="mt-2 text-green-400 font-semibold">
-              Camera Active
-            </p>
+            <p className="mt-2 text-green-400">Camera Active</p>
           </div>
         </div>
       )}
