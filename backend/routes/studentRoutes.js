@@ -1,14 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const {
-  getExamQuestions,
-  submitExam,
-} = require("../controllers/studentController");
+const { getExamQuestions } = require("../controllers/studentController");
 
-// Fetch exam questions
+// ✅ THIS IS THE ROUTE YOUR FRONTEND IS CALLING
 router.get("/exam/:examId", getExamQuestions);
-
-// Submit exam
-router.post("/submit", submitExam);
 
 module.exports = router;
