@@ -1,35 +1,24 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-/* ---------- TYPES ---------- */
-type Question = {
-  _id: string;
-  questionText: string;
-};
+const API_BASE = "http://localhost:5000";
 
-/* ---------- COMPONENT ---------- */
 export default function AddQuestionsPage() {
   const { examId } = useParams();
 
   const [questionText, setQuestionText] = useState("");
   const [options, setOptions] = useState(["", "", "", ""]);
-  const [correctIndex, setCorrectIndex] = useState(0);
-  const [questions, setQuestions] = useState<Question[]>([]);
+  const [correctOptionIndex, setCorrectOptionIndex] = useState(0);
   const [loading, setLoading] = useState(false);
 
-  /* ---------- FETCH QUESTIONS ---------- */
-  useEffect(() => {
-    if (!examId) return;
+  const handleOptionChange = (index: number, value: string) => {
+    const updated = [...options];
+    updated[index] = value;
+    setOptions(updated);
+  };
 
-    fetch(`http://localhost:5000/api/questions/${examId}`)
-      .then(res => res.json())
-      .then(data => setQuestions(data))
-      .catch(err => console.error(err));
-  }, [examId]);
-
-  /* ---------- ADD QUESTION ---------- */
   const handleAddQuestion = async () => {
     if (!questionText || options.some(o => !o)) {
       alert("Fill all fields");
@@ -38,127 +27,90 @@ export default function AddQuestionsPage() {
 
     setLoading(true);
 
-    const res = await fetch("http://localhost:5000/api/admin/question", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        examId,
-        questionText,
-        options,
-        correctOptionIndex: correctIndex,
-      }),
-    });
+    try {
+      const res = await fetch(`${API_BASE}/api/questions`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          examId, // ✅ THIS IS THE MOST IMPORTANT LINE
+          questionText,
+          options,
+          correctOptionIndex,
+        }),
+      });
 
-    const savedQuestion = await res.json();
+      const data = await res.json();
 
-    // show immediately
-    setQuestions(prev => [...prev, savedQuestion]);
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to add question");
+      }
 
-    // reset
-    setQuestionText("");
-    setOptions(["", "", "", ""]);
-    setCorrectIndex(0);
-    setLoading(false);
+      // Reset form
+      setQuestionText("");
+      setOptions(["", "", "", ""]);
+      setCorrectOptionIndex(0);
+
+      alert("Question added ✅");
+    } catch (err: any) {
+      alert(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  /* ---------- UI ---------- */
   return (
-    <div className="p-10 max-w-6xl">
-      <h1 className="text-3xl font-bold text-white mb-2">
+    <div className="p-10">
+      <h1 className="text-3xl font-bold text-white mb-6">
         Add Questions
       </h1>
 
-      <p className="text-white/70 mb-8">
-        Exam ID: <span className="font-mono">{examId}</span>
-      </p>
-
-      {/* ================= ADD QUESTION CARD ================= */}
-      <div className="bg-white rounded-2xl p-8 shadow-xl mb-12">
-        {/* Question */}
-        <label className="block font-semibold text-gray-700 mb-2">
-          Question
-        </label>
+      <div className="bg-white rounded-2xl p-8 max-w-4xl shadow-xl">
         <input
-          className="border p-3 w-full mb-4 text-black rounded-lg"
+          type="text"
           placeholder="Enter question"
           value={questionText}
-          onChange={e => setQuestionText(e.target.value)}
+          onChange={(e) => setQuestionText(e.target.value)}
+          className="w-full p-3 mb-4 border rounded-lg"
         />
-
-        {/* Options */}
-        <label className="block font-semibold text-gray-700 mb-2">
-          Options
-        </label>
 
         {options.map((opt, i) => (
           <input
             key={i}
-            className="border p-3 w-full mb-3 text-black rounded-lg"
+            type="text"
             placeholder={`Option ${i + 1}`}
             value={opt}
-            onChange={e => {
-              const copy = [...options];
-              copy[i] = e.target.value;
-              setOptions(copy);
-            }}
+            onChange={(e) => handleOptionChange(i, e.target.value)}
+            className="w-full p-3 mb-3 border rounded-lg"
           />
         ))}
 
-        {/* Correct option */}
-        <label className="block font-semibold text-gray-700 mb-2">
-          Correct Answer
-        </label>
         <select
-          className="border p-3 mb-6 text-black rounded-lg"
-          value={correctIndex}
-          onChange={e => setCorrectIndex(Number(e.target.value))}
+          value={correctOptionIndex}
+          onChange={(e) => setCorrectOptionIndex(Number(e.target.value))}
+          className="p-3 mb-6 border rounded-lg"
         >
-          {options.map((_, i) => (
-            <option key={i} value={i}>
-              Option {i + 1}
-            </option>
-          ))}
+          <option value={0}>Option 1</option>
+          <option value={1}>Option 2</option>
+          <option value={2}>Option 3</option>
+          <option value={3}>Option 4</option>
         </select>
 
-        {/* ADD QUESTION BUTTON (CLEAR & VISIBLE) */}
         <button
           onClick={handleAddQuestion}
           disabled={loading}
           className="
-            mt-4
             w-full py-4 rounded-xl
-            text-white font-bold text-lg
-            bg-gradient-to-r from-purple-600 to-pink-600
-            hover:brightness-110 transition
-            shadow-xl
+            text-white text-lg font-bold
+            bg-gradient-to-r from-purple-700 to-pink-700
+            hover:brightness-110
             disabled:opacity-50
           "
         >
-          {loading ? "Saving Question..." : "➕ Add Question"}
+          {loading ? "Saving..." : "➕ Add Question"}
         </button>
       </div>
-
-      {/* ================= ADDED QUESTIONS LIST ================= */}
-      <h2 className="text-2xl font-bold text-white mb-4">
-        Added Questions
-      </h2>
-
-      {questions.length === 0 ? (
-        <p className="text-white/70">
-          No questions added yet.
-        </p>
-      ) : (
-        questions.map((q, i) => (
-          <div
-            key={q._id}
-            className="bg-white rounded-xl p-4 mb-3"
-          >
-            <p className="font-semibold text-black">
-              {i + 1}. {q.questionText}
-            </p>
-          </div>
-        ))
-      )}
     </div>
   );
 }

@@ -48,16 +48,28 @@ export default function Sidebar({
           </>
         ) : (
           <>
+            {/* 1. Dashboard */}
             <NavItem
               label="Dashboard"
               href="/dashboard/admin"
               active={pathname === "/dashboard/admin"}
             />
+
+            {/* 2. Test (list of exams) */}
             <NavItem
-              label="Create Test"
+              label="Test"
+              href="/dashboard/admin/tests"
+              active={pathname.includes("/dashboard/admin/tests")}
+            />
+
+            {/* 3. Create */}
+            <NavItem
+              label="Create"
               href="/dashboard/admin/create-test"
               active={pathname.includes("create-test")}
             />
+
+            {/* 4. Reports */}
             <NavItem
               label="Reports"
               href="/dashboard/admin/reports"
