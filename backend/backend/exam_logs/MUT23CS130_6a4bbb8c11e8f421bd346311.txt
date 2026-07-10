@@ -1,0 +1,48 @@
+═══════════════════════════════════════════════════════════════
+                    EYEZORA EXAM PROCTORING LOG                
+═══════════════════════════════════════════════════════════════
+Student ID   : MUT23CS130
+Student Name : Rifa
+Exam         : Proctoring E2E Exam
+Session ID   : 6a4bbb8c11e8f421bd346311
+Start Time   : 2026-07-06T14:28:28.495Z
+End Time     : 2026-07-06T14:29:34.728Z
+Duration     : 1 min 6 sec
+Risk Level   : High
+
+─── VIOLATION SUMMARY ──────────────────────────────────────────
+Multiple Faces      : 0
+No Face Detected    : 13
+Looking Away        : 0
+Phone Detected      : 5
+Suspicious Movement : 0
+Tab Switches        : 0
+Window Focus Lost   : 0
+Full-Screen Exits   : 1
+Extension Warnings  : 0
+TOTAL VIOLATIONS    : 19
+
+─── EVENT LOG ──────────────────────────────────────────────────
+Timestamp                  | Event                     | Conf | Severity
+───────────────────────────|───────────────────────────|──────|─────────
+6/7/2026, 7:58:28 pm       | Exam Started              | 100% | Low
+6/7/2026, 7:58:31 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:58:32 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:58:33 pm       | Phone Detected            | 56.2% | High
+6/7/2026, 7:58:38 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:58:39 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:58:47 pm       | Phone Detected            | 84.7% | High
+6/7/2026, 7:58:52 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:58:55 pm       | Phone Detected            | 53.9% | High
+6/7/2026, 7:59:03 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:59:04 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:59:05 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:59:06 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:59:07 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:59:11 pm       | Fullscreen Exit           | 100% | High
+6/7/2026, 7:59:16 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:59:17 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:59:18 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:59:26 pm       | Phone Detected            | 57.2% | High
+6/7/2026, 7:59:33 pm       | Phone Detected            | 51%  | High
+═══════════════════════════════════════════════════════════════

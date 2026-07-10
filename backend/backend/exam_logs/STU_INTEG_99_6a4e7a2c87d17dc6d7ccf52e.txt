@@ -1,0 +1,35 @@
+═══════════════════════════════════════════════════════════════
+                    EYEZORA EXAM PROCTORING LOG                
+═══════════════════════════════════════════════════════════════
+Student ID   : STU_INTEG_99
+Student Name : Integration Test Student
+Exam         : Integration Test Chemistry
+Session ID   : 6a4e7a2c87d17dc6d7ccf52e
+Start Time   : 2026-07-08T16:26:20.964Z
+End Time     : 2026-07-08T16:26:22.045Z
+Duration     : 0 min 1 sec
+Risk Level   : Medium
+
+─── VIOLATION SUMMARY ──────────────────────────────────────────
+Multiple Faces      : 0
+No Face Detected    : 1
+Looking Away        : 0
+Phone Detected      : 0
+Suspicious Movement : 0
+Tab Switches        : 1
+Window Focus Lost   : 0
+Full-Screen Exits   : 1
+Extension Warnings  : 0
+TOTAL VIOLATIONS    : 5
+
+─── EVENT LOG ──────────────────────────────────────────────────
+Timestamp                  | Event                     | Conf | Severity
+───────────────────────────|───────────────────────────|──────|─────────
+8/7/2026, 9:56:21 pm       | Exam Started              | 100% | Low
+8/7/2026, 9:56:21 pm       | Fullscreen Exit           | 100% | High
+8/7/2026, 9:56:21 pm       | Browser Tab Switch        | 100% | High
+8/7/2026, 9:56:21 pm       | Camera Disconnected       | 100% | High
+8/7/2026, 9:56:21 pm       | MICROPHONE_DISABLED       | 100% | High
+8/7/2026, 9:56:21 pm       | No Face Detected          | 95%  | High
+8/7/2026, 9:56:22 pm       | Exam Ended                | 100% | Low
+═══════════════════════════════════════════════════════════════

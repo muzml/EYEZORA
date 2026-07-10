@@ -1,0 +1,30 @@
+═══════════════════════════════════════════════════════════════
+                    EYEZORA EXAM PROCTORING LOG                
+═══════════════════════════════════════════════════════════════
+Student ID   : MUT23CS130
+Student Name : Rifa
+Exam         : Proctoring E2E Exam
+Session ID   : 6a4bb4ccb95f4ee3958a6567
+Start Time   : 2026-07-06T13:59:40.787Z
+End Time     : 2026-07-06T14:00:02.470Z
+Duration     : 0 min 21 sec
+Risk Level   : Low
+
+─── VIOLATION SUMMARY ──────────────────────────────────────────
+Multiple Faces      : 0
+No Face Detected    : 0
+Looking Away        : 0
+Phone Detected      : 0
+Suspicious Movement : 0
+Tab Switches        : 0
+Window Focus Lost   : 0
+Full-Screen Exits   : 1
+Extension Warnings  : 0
+TOTAL VIOLATIONS    : 1
+
+─── EVENT LOG ──────────────────────────────────────────────────
+Timestamp                  | Event                     | Conf | Severity
+───────────────────────────|───────────────────────────|──────|─────────
+6/7/2026, 7:29:40 pm       | Exam Started              | 100% | Low
+6/7/2026, 7:29:50 pm       | Fullscreen Exit           | 100% | High
+═══════════════════════════════════════════════════════════════

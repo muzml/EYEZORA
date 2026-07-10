@@ -1,0 +1,58 @@
+═══════════════════════════════════════════════════════════════
+                    EYEZORA EXAM PROCTORING LOG                
+═══════════════════════════════════════════════════════════════
+Student ID   : MUT23CS130
+Student Name : Rifa
+Exam         : Proctoring E2E Exam
+Session ID   : 6a4bb6ceb95f4ee3958a65b1
+Start Time   : 2026-07-06T14:08:14.870Z
+End Time     : 2026-07-06T14:08:45.037Z
+Duration     : 0 min 30 sec
+Risk Level   : High
+
+─── VIOLATION SUMMARY ──────────────────────────────────────────
+Multiple Faces      : 0
+No Face Detected    : 29
+Looking Away        : 0
+Phone Detected      : 0
+Suspicious Movement : 0
+Tab Switches        : 0
+Window Focus Lost   : 0
+Full-Screen Exits   : 0
+Extension Warnings  : 0
+TOTAL VIOLATIONS    : 29
+
+─── EVENT LOG ──────────────────────────────────────────────────
+Timestamp                  | Event                     | Conf | Severity
+───────────────────────────|───────────────────────────|──────|─────────
+6/7/2026, 7:38:14 pm       | Exam Started              | 100% | Low
+6/7/2026, 7:38:17 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:17 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:18 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:19 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:20 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:21 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:22 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:23 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:24 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:25 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:26 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:27 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:28 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:29 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:30 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:31 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:32 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:33 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:34 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:35 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:36 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:37 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:38 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:39 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:40 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:41 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:42 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:43 pm       | No Face Detected          | 95%  | High
+6/7/2026, 7:38:44 pm       | No Face Detected          | 95%  | High
+═══════════════════════════════════════════════════════════════

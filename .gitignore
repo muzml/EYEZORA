@@ -1,8 +1,35 @@
-# Ignore datasets, weights, runs, logs, venv
+# Ignore datasets, weights, runs, logs
 roboflow_dataset/
 *.zip
 *.pt
 runs/
 __pycache__/
-.venv/
 *.log
+
+# Node dependencies
+node_modules/
+**/node_modules/
+
+# Next.js build output
+.next/
+**/.next/
+
+# Python Virtual Environments
+venv/
+**/venv/
+.venv/
+**/.venv/
+
+# Local Environment files (credentials)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+**/.env
+**/.env.local
+**/.env.*.local
+
+# IDE configurations
+.vscode/
+.idea/
