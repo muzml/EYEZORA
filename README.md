@@ -56,3 +56,24 @@ cd EYEZORA
    python -m venv venv
    ```
 2. Activate the virtual environment:
+   - Windows (PowerShell):
+     ```powershell
+     .\venv\Scripts\Activate.ps1
+     ```
+   - macOS / Linux / Windows CMD:
+     ```bash
+     source venv/bin/activate  # or venv\Scripts\activate
+     ```
+3. Install the required Python packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
+### 4. Next.js Frontend Setup
+1. Change directory to the frontend:
+   ```bash
+   cd ../frontend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
