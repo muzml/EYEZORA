@@ -36,3 +36,23 @@ To run the entire EyeZora suite, you need to set up both Node.js (for the fronte
 ### 1. Repository Setup
 
 Clone the repository and navigate to the project directory:
+```bash
+git clone https://github.com/muzml/EYEZORA.git
+cd EYEZORA
+```
+### 2. Express Backend Setup
+1. Change directory to the backend:
+   ```bash
+   cd backend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Configure environment variables in `.env` (port, db connection, etc.).
+### 3. AI Proctoring Backend Setup
+1. Create a Python virtual environment:
+   ```bash
+   python -m venv venv
+   ```
+2. Activate the virtual environment:
