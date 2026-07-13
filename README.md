@@ -17,3 +17,22 @@ EyeZora is a state-of-the-art AI-powered smart online examination proctoring sys
 ## 🏗️ System Architecture
 
 The application is split into three main components, each optimized for its specific workload:
+1. **Next.js Frontend (Port 3000)**:
+   - Built using Next.js with TypeScript.
+   - Features a clean, modern user interface for both students (taking exams with live proctoring) and admins (dashboard for statistics, log checks, and configuration).
+2. **Node.js Express Backend (Port 5000)**:
+   - Manages database schemas, authentication, exam scheduling, questions, and students session information.
+   - Serves static exam logs for admin auditing.
+3. **FastAPI AI Backend (Port 8000)**:
+   - Built with Python FastAPI for extremely fast asynchronous endpoints.
+   - Integrates OpenCV, Haar Cascades, and YOLOv8 neural network inference to process base64 webcam frames and return detection events instantly.
+
+---
+
+## 🛠️ Prerequisites & Installation
+
+To run the entire EyeZora suite, you need to set up both Node.js (for the frontend and Express backend) and Python (for the AI proctoring backend).
+
+### 1. Repository Setup
+
+Clone the repository and navigate to the project directory:
