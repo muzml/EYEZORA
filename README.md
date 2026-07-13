@@ -77,3 +77,33 @@ cd EYEZORA
    ```bash
    npm install
    ```
+
+---
+
+## 🏃 Running the Application
+
+### The Easy Way (Windows Powershell)
+
+Launch all services (Express, FastAPI, Next.js) in separate windows using:
+```powershell
+./start-all.ps1
+```
+
+### The Manual Way (All OS)
+
+Run the services individually:
+
+1. **Express Backend** (Port 5000):
+   ```bash
+   cd backend && npm run dev
+   ```
+
+2. **AI Proctoring Backend** (Port 8000):
+   ```bash
+   cd backend && uvicorn main:app --host 127.0.0.1 --port 8000 --reload
+   ```
+
+3. **Next.js Frontend** (Port 3000):
+   ```bash
+   cd frontend && npm run dev
+   ```
