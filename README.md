@@ -107,3 +107,24 @@ Run the services individually:
    ```bash
    cd frontend && npm run dev
    ```
+
+---
+
+## 🧠 AI Proctoring Logic Details
+
+The AI backend processes frame-by-frame webcam feeds using computer vision algorithms:
+
+- **Face Presence Monitoring**:
+  - Automatically loads the YOLOv8 face detector (`best_train.pt`).
+  - If no face is detected in the frame, a warning event `No Face Detected` (Medium Severity) is generated.
+  - If multiple faces are detected, a warning event `Multiple Faces Detected` (High Severity) is generated.
+
+- **Active Gaze Estimation**:
+  - Isolates the face bounding boxes.
+  - Detects eye regions using OpenCV Haar Cascade Classifier (`haarcascade_eye.xml`).
+  - Estimates pupil centroid movement (Center, Left, Right).
+  - Uses a rolling buffer (size 5). If the candidate looks away from the screen consistently, it generates a `Gaze Away` (Low/Medium Severity) event.
+
+- **Object Detection (Cell Phones/Books)**:
+  - Uses the COCO-trained `yolov8s.pt` model to scan for target objects.
+  - Generates alerts if objects like `cell phone`, `book`, or laptop screens are found in the frame.
