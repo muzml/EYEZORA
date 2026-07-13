@@ -128,3 +128,25 @@ The AI backend processes frame-by-frame webcam feeds using computer vision algor
 - **Object Detection (Cell Phones/Books)**:
   - Uses the COCO-trained `yolov8s.pt` model to scan for target objects.
   - Generates alerts if objects like `cell phone`, `book`, or laptop screens are found in the frame.
+
+---
+
+## 🤝 Contribution Guidelines
+
+We welcome contributions to EyeZora! If you want to make improvements or add features:
+
+1. Fork the Repository.
+2. Create a Feature Branch (`git checkout -b feature/amazing-feature`).
+3. Commit your changes (`git commit -m 'Add some amazing feature'`).
+4. Push to the Branch (`git push origin feature/amazing-feature`).
+5. Open a Pull Request.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License. Feel free to use, modify, and distribute it in accordance with the license terms.
+
+---
+
+*EyeZora - Empowering Secure and Fair Online Assessments.*
