@@ -41,7 +41,7 @@ function ResetPasswordForm() {
     }
     setLoading(true);
     try {
-      await authApi.resetPassword(token, email, newPassword);
+      await authApi.resetPassword(token, newPassword);
       setDone(true);
       toast.success("Password reset successful!");
     } catch (err: any) {

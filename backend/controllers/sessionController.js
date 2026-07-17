@@ -530,6 +530,29 @@ exports.uploadRecording = async (req, res) => {
   }
 };
 
+// ─── Helper: Upload Text Log to Cloudinary ────────────────────────────────────
+
+const uploadLogToCloudinary = (content, publicId) => {
+  return new Promise((resolve, reject) => {
+    const uploadStream = cloudinary.uploader.upload_stream(
+      {
+        resource_type: "raw",
+        public_id: publicId,
+        folder: "exam_logs",
+      },
+      (error, result) => {
+        if (error) reject(error);
+        else resolve(result);
+      }
+    );
+    const { Readable } = require("stream");
+    const stream = new Readable();
+    stream.push(content);
+    stream.push(null);
+    stream.pipe(uploadStream);
+  });
+};
+
 // ─── Helper: Generate Text Log File ───────────────────────────────────────────
 
 async function generateLogFile(session, logs) {
@@ -602,11 +625,35 @@ async function generateLogFile(session, logs) {
 
     lines.push("═══════════════════════════════════════════════════════════════");
 
-    fs.writeFileSync(filePath, lines.join("\n"), "utf-8");
+    const content = lines.join("\n");
+    let finalLogFilePath = `exam_logs/${fileName}`;
+    let finalLogFilePublicId = null;
 
-    // Update logFilePath in session
+    // Write locally for safety/backup (may fail on strictly read-only serverless environments)
+    try {
+      fs.writeFileSync(filePath, content, "utf-8");
+    } catch (writeErr) {
+      console.warn("[generateLogFile] Local file write failed (expected on serverless):", writeErr.message);
+    }
+
+    // Upload to Cloudinary if configured
+    if (process.env.CLOUDINARY_CLOUD_NAME) {
+      try {
+        console.log(`[generateLogFile] Uploading log file to Cloudinary for session ${session._id}...`);
+        const publicId = `exam_logs_${session.studentId}_${session._id}`;
+        const uploadResult = await uploadLogToCloudinary(content, publicId);
+        finalLogFilePath = uploadResult.secure_url;
+        finalLogFilePublicId = uploadResult.public_id;
+        console.log(`[generateLogFile] Log file successfully uploaded to Cloudinary: ${finalLogFilePath}`);
+      } catch (cloudErr) {
+        console.error("[generateLogFile] Cloudinary upload failed, falling back to local path:", cloudErr.message);
+      }
+    }
+
+    // Update logFilePath and logFilePublicId in session
     await ExamSession.findByIdAndUpdate(session._id, {
-      logFilePath: `exam_logs/${fileName}`,
+      logFilePath: finalLogFilePath,
+      logFilePublicId: finalLogFilePublicId,
     });
   } catch (err) {
     console.error("generateLogFile error:", err);

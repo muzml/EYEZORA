@@ -33,3 +33,6 @@ venv/
 # IDE configurations
 .vscode/
 .idea/
+
+# Local Exam Logs
+backend/exam_logs/

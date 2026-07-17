@@ -432,8 +432,18 @@ const performCascadeDelete = async (assignmentId) => {
         }
       }
 
-      // 2. Delete text log file from local filesystem
-      if (session.logFilePath) {
+      // 2. Delete text log file from Cloudinary or local filesystem
+      if (session.logFilePublicId) {
+        try {
+          await cloudinary.uploader.destroy(session.logFilePublicId, { resource_type: "raw" });
+          console.log(`[Cloudinary] Deleted proctoring log file: ${session.logFilePublicId}`);
+          cloudinaryCount++;
+        } catch (err) {
+          console.error(`[Cloudinary] Failed to delete proctoring log file ${session.logFilePublicId}:`, err.message);
+        }
+      }
+
+      if (session.logFilePath && !session.logFilePath.startsWith("http")) {
         try {
           const fullPath = path.join(__dirname, "../", session.logFilePath);
           if (fs.existsSync(fullPath)) {

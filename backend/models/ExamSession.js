@@ -92,7 +92,11 @@ const examSessionSchema = new mongoose.Schema(
     logFilePath: {
       type: String,
       default: null,
-      // e.g. "exam_logs/STU001_EXAM01.txt"
+      // e.g. "exam_logs/STU001_EXAM01.txt" or Cloudinary URL
+    },
+    logFilePublicId: {
+      type: String,
+      default: null,
     },
 
     // ── Score ─────────────────────────────────────────────────────────
