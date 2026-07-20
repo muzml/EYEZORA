@@ -14,7 +14,7 @@ EyeZora is a state-of-the-art AI-powered smart online examination proctoring sys
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 The application is split into three main components, each optimized for its specific workload:
 1. **Next.js Frontend (Port 3000)**:
