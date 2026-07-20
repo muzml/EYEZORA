@@ -29,7 +29,7 @@ The application is split into three main components, each optimized for its spec
 
 ---
 
-## 🛠️ Prerequisites & Installation
+## Prerequisites & Installation
 
 To run the entire EyeZora suite, you need to set up both Node.js (for the frontend and Express backend) and Python (for the AI proctoring backend).
 
