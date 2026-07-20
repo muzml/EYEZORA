@@ -1,8 +1,8 @@
-# EyeZora 👁️🔍
+# EyeZora 👁️
 
 EyeZora is a state-of-the-art AI-powered smart online examination proctoring system. It monitors candidate behavior in real-time using modern deep learning models and computer vision techniques, alerting administrators to potential academic dishonesty.
 
-## 🚀 Key Features
+## Key Features
 
 - **Real-Time Video Analytics**: Direct camera feed processing for immediate feedback.
 - **YOLO-Based Face Detection**: Tracks the presence of the examinee and detects if multiple faces or no faces are visible.
