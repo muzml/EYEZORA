@@ -80,7 +80,7 @@ cd EYEZORA
 
 ---
 
-## 🏃 Running the Application
+## Running the Application
 
 ### The Easy Way (Windows Powershell)
 
