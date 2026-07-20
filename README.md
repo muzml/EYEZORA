@@ -110,7 +110,7 @@ Run the services individually:
 
 ---
 
-## 🧠 AI Proctoring Logic Details
+## AI Proctoring Logic Details
 
 The AI backend processes frame-by-frame webcam feeds using computer vision algorithms:
 
@@ -131,7 +131,7 @@ The AI backend processes frame-by-frame webcam feeds using computer vision algor
 
 ---
 
-## 🤝 Contribution Guidelines
+## Contribution Guidelines
 
 We welcome contributions to EyeZora! If you want to make improvements or add features:
 
@@ -143,7 +143,7 @@ We welcome contributions to EyeZora! If you want to make improvements or add fea
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License. Feel free to use, modify, and distribute it in accordance with the license terms.
 
